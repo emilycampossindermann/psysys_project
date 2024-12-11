@@ -5,7 +5,8 @@ from dash import html, Input, Output, State, ALL, MATCH
 from constants import factors, stylesheet, hidden_style, visible_style, translations, factor_translation_map, total_steps, steps
 from functions.map_build import (map_add_factors, map_add_chains, map_add_cycles)
 from functions.map_style import (graph_color)
-from functions.page_content import (generate_step_content, create_mental_health_map_tab, create_tracking_tab, create_about, create_landing_page)
+from functions.page_content import (generate_step_content, create_mental_health_map_tab, create_tracking_tab, create_about,
+                                    create_demo_page, create_landing_page)
 
 # Translate PsySys factors 
 def update_factors_based_on_language(selected_language, session_data, edit_map_data):
@@ -87,6 +88,11 @@ def update_page_and_buttons(pathname, edit_map_data, current_step_data, language
 
     elif pathname == "/about":
         content = create_about(app, translation)
+        back_button_style = hidden_style
+        next_button_style = hidden_style
+
+    elif pathname == "/psysys-demo":
+        content = create_demo_page()
         back_button_style = hidden_style
         next_button_style = hidden_style
 
@@ -240,7 +246,11 @@ def limit_factor_selection(selection):
         return selection[:10]
     return selection
 
-
+# Callback for toggling the collapse
+def toggle_collapse(n_clicks, is_open):
+    if n_clicks:
+        return not is_open
+    return is_open
 
 # Register the callbacks
 def register_layout_callbacks(app):
@@ -332,5 +342,11 @@ def register_layout_callbacks(app):
         Output({'type': 'dynamic-dropdown', 'step': 1}, 'value'),
         Input({'type': 'dynamic-dropdown', 'step': 1}, 'value')
     )(limit_factor_selection)
+
+    app.callback(
+        Output("psysys-demo-collapse", "is_open"),
+        [Input("psysys-demo-link", "n_clicks")],
+        [dash.dependencies.State("psysys-demo-collapse", "is_open")],
+    )(toggle_collapse)
 
 
