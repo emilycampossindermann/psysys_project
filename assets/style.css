@@ -295,13 +295,14 @@ body {
         -0.8px -0.8px cyan;  /* Cyan offset */
 }
 
-.glowing-button {
+/*.glowing-button {
     box-shadow: 0 0 10px #004AAD, 0 0 20px #AE52FF, 0 0 30px #CB6CE6;
     transition: box-shadow 0.5s ease-in-out;
-}
+}*/
 
 .glowing-button:hover {
-    box-shadow: 0 0 20px #004AAD, 0 0 40px #AE52FF, 0 0 60px #CB6CE6;
+    box-shadow: 0 0 5px #004AAD, 0 0 10px #AE52FF, 0 0 15px #CB6CE6;
+    transition: box-shadow 0.5s ease-in-out;
 }
 
 /* Sticky container for text block and dropdown */
@@ -387,6 +388,39 @@ body {
 
 .progress-bar .label.completed {
     color: #4caf50;
+}
+
+@keyframes move-glow-1 {
+    0% {
+        /*transform: translate(0px, 0px) rotate(0deg);*/
+        opacity: 0.4;
+    }
+    100% {
+        /*transform: translate(1px, -1px) rotate(0deg);*/
+        opacity: 0.9;
+    }
+}
+
+@keyframes move-glow-2 {
+    0% {
+        /*transform: translate(0px, 0px) rotate(0deg);*/
+        opacity: 0.3;
+    }
+    100% {
+        /*transform: translate(-0px, 0px) rotate(0deg);*/
+        opacity: 0.7;
+    }
+}
+
+@keyframes move-glow-3 {
+    0% {
+        /*transform: translate(0px, 0px) rotate(0deg);*/
+        opacity: 0.2;
+    }
+    100% {
+        /*transform: translate(0px, -0px) rotate(0deg);*/
+        opacity: 0.8;
+    }
 }
 
 

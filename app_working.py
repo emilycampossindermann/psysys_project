@@ -74,6 +74,112 @@ buttons_map = html.Div(
 )
 
 # Layout elements: Navigation sidebar
+# nav_col = dbc.Col(
+#     [
+#         html.Br(),
+#         html.A(
+#             html.Img(
+#                 src="/assets/new-logo.png",
+#                 style={"marginLeft": "1px", "width": "175px", "height": "auto", "marginTop": "20px", "marginBottom": '10px'}
+#             ), href="/",  # Redirect to landing page
+#         ),
+#         html.Br(),
+#         html.Br(),
+#         html.Br(),
+#         dbc.Nav(
+#             [
+#                 dbc.NavLink(
+#                     "about us",
+#                     href="#",
+#                     id="about-us",
+#                     active="exact",
+#                     style={"fontSize": "20px", "color": "#8793c9", "alignItems": "center"},
+#                 ),
+#                 dbc.NavLink(
+#                     "psysys demo",
+#                     href="/psysys-demo",
+#                     id="psysys-demo",
+#                     active="exact",
+#                     style={"fontSize": "20px", "margin": "0px 0", "color": "#8793c9"}, 
+#                 ),
+#                 dbc.Nav(
+#                     [
+#                         dbc.NavLink(
+#                             "psychoeducation",
+#                             href="/psychoeducation",
+#                             id="psychoeducation",
+#                             active="exact",
+#                             style={"fontSize": "16px", "marginLeft": "0px", "color": "#8793c9"}, # "marginLeft": "30px", 
+#                         ),
+#                         dbc.NavLink(
+#                             "map editor",
+#                             href="/my-mental-health-map",
+#                             id="edit-my-map",
+#                             active="exact",
+#                             style={"fontSize": "16px", "color": "#8793c9"}, # "marginLeft": "30px", 
+#                         ),
+#                         dbc.NavLink(
+#                             "map tracker",
+#                             href="/track-my-mental-health-map",
+#                             id="compare-my-map",
+#                             active="exact",
+#                             style={"fontSize": "16px", "marginLeft": "0px", "color": "#8793c9"}, # "marginLeft": "30px", 
+#                         ),
+#                     ],
+#                     vertical=True,
+#                     pills=True,
+#                     className="sub-nav",
+#                     style={"alignItems": "center"}
+#                 ),
+#                 dbc.NavLink(
+#                     "output",
+#                     href="/output",
+#                     id="output",
+#                     active="exact",
+#                     style={"fontSize": "20px",  "margin": "0px 0", "color": "#8793c9"},
+#                 ),
+#                 dbc.NavLink(
+#                     "team",
+#                     href="/about",
+#                     id="about",
+#                     active="exact",
+#                     style={"fontSize": "20px",  "margin": "0px 0px", "color": "#8793c9"},
+#                 ),
+#             ],
+#             vertical=True,
+#             pills=True,
+#             className="main-nav",
+#             id="nav-links",
+#             style={
+#                 "display": "flex",
+#                 "flexDirection": "column",
+#                 "alignItems": "center",  # Center horizontally
+#             },
+#         ),
+#         html.Br(),
+#         html.Br(),
+#         dcc.Loading(
+#             id="loading-1",
+#             type="circle",
+#             color="#8793c9",
+#             children=html.Div(id="tab-content")
+#         ),
+#         dcc.Store(id="loading-state", data=False),  # False means not loading
+#     ],
+#     md=1,
+#     #className="nav-yellow",  # Custom class for yellow background
+#     className = "nav-primary",
+#     style={
+#         "position": "fixed",
+#         "top": "0",
+#         "left": "0",
+#         "height": "100vh",
+#         "overflowY": "auto",
+#         "zIndex": "5000",
+#         "width": "190px"
+#     },
+# )
+
 nav_col = dbc.Col(
     [
         html.Br(),
@@ -81,7 +187,8 @@ nav_col = dbc.Col(
             html.Img(
                 src="/assets/new-logo.png",
                 style={"marginLeft": "1px", "width": "175px", "height": "auto", "marginTop": "20px", "marginBottom": '10px'}
-            ), href="/",  # Redirect to landing page
+            ),
+            href="/",  # Redirect to landing page
         ),
         html.Br(),
         html.Br(),
@@ -89,61 +196,71 @@ nav_col = dbc.Col(
         dbc.Nav(
             [
                 dbc.NavLink(
-                    "about us",
+                    "About",
                     href="#",
                     id="about-us",
                     active="exact",
                     style={"fontSize": "20px", "color": "#8793c9", "alignItems": "center"},
                 ),
-                dbc.NavLink(
-                    "psysys demo",
-                    href="#",
-                    id="psysys-demo",
-                    active="exact",
-                    style={"fontSize": "20px", "margin": "0px 0", "color": "#8793c9"}, 
-                ),
-                dbc.Nav(
+                # Collapsible NavLink
+                html.Div(
                     [
                         dbc.NavLink(
-                            "psychoeducation",
-                            href="/psychoeducation",
-                            id="psychoeducation",
+                            "Demo",
+                            id="psysys-demo-link",
                             active="exact",
-                            style={"fontSize": "16px", "marginLeft": "0px", "color": "#8793c9"}, # "marginLeft": "30px", 
+                            style={"fontSize": "20px", "margin": "0px 0", "color": "#8793c9", "textAlign": "center"},
+                            href="/psysys-demo",  # No link since it's a parent
+                            n_clicks=0,  # Needed for toggling
                         ),
-                        dbc.NavLink(
-                            "map editor",
-                            href="/my-mental-health-map",
-                            id="edit-my-map",
-                            active="exact",
-                            style={"fontSize": "16px", "color": "#8793c9"}, # "marginLeft": "30px", 
+                        dbc.Collapse(
+                            id="psysys-demo-collapse",
+                            is_open=False,  # Initially closed
+                            style={"textAlign": "center"},
+                            children=dbc.Nav(
+                                [
+                                    dbc.NavLink(
+                                        "psychoeducation",
+                                        href="/psychoeducation",
+                                        id="psychoeducation",
+                                        active="exact",
+                                        style={"fontSize": "16px", "color": "#8793c9", "textAlign": "center"},
+                                    ),
+                                    dbc.NavLink(
+                                        "map editor",
+                                        href="/my-mental-health-map",
+                                        id="edit-my-map",
+                                        active="exact",
+                                        style={"fontSize": "16px", "color": "#8793c9", "textAlign": "center"},
+                                    ),
+                                    dbc.NavLink(
+                                        "map tracker",
+                                        href="/track-my-mental-health-map",
+                                        id="compare-my-map",
+                                        active="exact",
+                                        style={"fontSize": "16px", "color": "#8793c9", "textAlign": "center"},
+                                    ),
+                                ],
+                                vertical=True,
+                                pills=True,
+                                className="sub-nav",
+                            ),
                         ),
-                        dbc.NavLink(
-                            "map tracker",
-                            href="/track-my-mental-health-map",
-                            id="compare-my-map",
-                            active="exact",
-                            style={"fontSize": "16px", "marginLeft": "0px", "color": "#8793c9"}, # "marginLeft": "30px", 
-                        ),
-                    ],
-                    vertical=True,
-                    pills=True,
-                    className="sub-nav",
-                    style={"alignItems": "center"}
+                    ]
                 ),
                 dbc.NavLink(
-                    "output",
+                    "Output",
                     href="/output",
                     id="output",
                     active="exact",
-                    style={"fontSize": "20px",  "margin": "0px 0", "color": "#8793c9"},
+                    style={"fontSize": "20px", "margin": "0px 0", "color": "#8793c9"},
                 ),
                 dbc.NavLink(
-                    "team",
+                    "Team",
                     href="/about",
                     id="about",
                     active="exact",
-                    style={"fontSize": "20px",  "margin": "0px 0px", "color": "#8793c9"},
+                    style={"fontSize": "20px", "margin": "0px 0px", "color": "#8793c9"},
                 ),
             ],
             vertical=True,
@@ -162,13 +279,12 @@ nav_col = dbc.Col(
             id="loading-1",
             type="circle",
             color="#8793c9",
-            children=html.Div(id="tab-content")
+            children=html.Div(id="tab-content"),
         ),
         dcc.Store(id="loading-state", data=False),  # False means not loading
     ],
     md=1,
-    #className="nav-yellow",  # Custom class for yellow background
-    className = "nav-primary",
+    className="nav-primary",
     style={
         "position": "fixed",
         "top": "0",
@@ -176,7 +292,7 @@ nav_col = dbc.Col(
         "height": "100vh",
         "overflowY": "auto",
         "zIndex": "5000",
-        "width": "190px"
+        "width": "190px",
     },
 )
 
