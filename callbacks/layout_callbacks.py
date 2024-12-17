@@ -6,7 +6,7 @@ from constants import factors, stylesheet, hidden_style, visible_style, translat
 from functions.map_build import (map_add_factors, map_add_chains, map_add_cycles)
 from functions.map_style import (graph_color)
 from functions.page_content import (generate_step_content, create_mental_health_map_tab, create_tracking_tab, create_about,
-                                    create_demo_page, create_landing_page)
+                                    create_demo_page, create_landing_page, create_learn_more_page, create_output_page)
 
 # Translate PsySys factors 
 def update_factors_based_on_language(selected_language, session_data, edit_map_data):
@@ -93,6 +93,16 @@ def update_page_and_buttons(pathname, edit_map_data, current_step_data, language
 
     elif pathname == "/psysys-demo":
         content = create_demo_page()
+        back_button_style = hidden_style
+        next_button_style = hidden_style
+
+    elif pathname == "/project-info":
+        content = create_learn_more_page()
+        back_button_style = hidden_style
+        next_button_style = hidden_style
+
+    elif pathname == "/output":
+        content = create_output_page()
         back_button_style = hidden_style
         next_button_style = hidden_style
 

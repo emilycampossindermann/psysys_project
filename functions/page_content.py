@@ -110,8 +110,8 @@ def create_progress_bar(current_step):
             "display": "flex",
             "alignItems": "center",
             "justifyContent": "space-evenly",  # Decrease space between circles
-            "marginLeft": "100px",
-            "marginRight": "100px",
+            "marginLeft": "-120px",
+            "marginRight": "0px",
             "marginBottom": "20px",
         },
         children=[
@@ -181,7 +181,7 @@ def generate_step_content(step, session_data, translation):
 
                         html.Div(create_progress_bar(step), style={"marginTop": "-100px"}),
 
-                        html.Hr(style={"marginLeft": "100px", "width": "90%", "marginTop": "31px"}),
+                        html.Hr(style={"marginLeft": "0px", "width": "90%", "marginTop": "31px"}),
 
                         # Main Content Container
                         html.Div(
@@ -199,7 +199,8 @@ def generate_step_content(step, session_data, translation):
                                     style={
                                         "width": "40%",
                                         "padding": "15px",
-                                        "marginLeft": "100px",
+                                        #"marginLeft": "100px",
+                                        "marginLeft": "0px"
                                     },
                                     children=[
                                         # Exercise Description and Dropdown
@@ -1524,20 +1525,20 @@ def create_about(app, translation):
         html.Div(
             style=HEADER_STYLE,
             children=[
-                html.H2(
-                    "Share Knowledge. Empower People.", 
-                    style={"fontFamily": "Arial Black", 
-                           "fontWeight": "bold",
-                           "color": "white", 
-                           "textAlign": 'center'}),
+                # html.H2(
+                #     "Share Knowledge. Empower People.", 
+                #     style={"fontFamily": "Arial Black", 
+                #            "fontWeight": "bold",
+                #            "color": "white", 
+                #            "textAlign": 'center'}),
                         html.Div(style={"height": "20px"}),
-                        html.P(translation['psysys_mission'],
-                            style={"maxWidth": "900px", 
-                                "color": "white", 
-                                "margin": "0 auto", 
-                                #'marginLeft':'180px',
-                                "textAlign": 'center'},
-                        ),
+                        # html.P(translation['psysys_mission'],
+                        #     style={"maxWidth": "900px", 
+                        #         "color": "white", 
+                        #         "margin": "0 auto", 
+                        #         #'marginLeft':'180px',
+                        #         "textAlign": 'center'},
+                        # ),
                     ],
                 ),
         html.Div(
@@ -1633,21 +1634,177 @@ def create_about(app, translation):
         ),
     ], style=COMMON_STYLE)
 
-# Function: Create Landing page
+# Function: Create demo page
+# def create_demo_page():
+#     return html.Div(
+#         style={
+#             "textAlign": "center",
+#             "background": "linear-gradient(to bottom, white, #f4f4f9, #d6ccff, #9b84ff, #6F4CFF)",
+#             "fontFamily": "Outfit",
+#             "width": "100vw",  # Use 100% to avoid horizontal overflow
+#             "height": "100vh",
+#             "display": "flex",
+#             "flexDirection": "column",
+#             "justifyContent": "center",
+#             "alignItems": "center",
+#             "overflowX": "hidden",  # Prevent horizontal scrolling
+#             "marginLeft": "-12px"
+#         },
+#         children=[
+#             # Header Section
+#             html.Div(
+#                 children=[
+#                     html.Img(
+#                         src="/assets/new-logo.png",
+#                         style={"width": "200px", "marginBottom": "20px"},
+#                     ),
+#                     html.H1(
+#                         #"Welcome to PsySys",
+#                         "PsySys Demo",
+#                         #className="multi-color-text",
+#                         style={
+#                             "fontSize": "55px",
+#                             #"color": "black",
+#                             "color": "#4A4A8D",
+#                             "fontWeight": 500,
+#                             "fontFamily": "Outfit",
+#                         },
+#                     ),
+#                     html.P(
+#                         "Discover insights, track your mental health, and gain actionable knowledge.",
+#                         style={"fontSize": "18px", "color": "#6c757d", "fontWeight": 300},
+#                     ),
+#                     # Buttons Section
+#                     html.Div(
+#                         children=[
+#                             dbc.Button(
+#                                 "Get Started",
+#                                 href="/psychoeducation",
+#                                 className="glowing-button",
+#                                 style={
+#                                     "margin": "10px",
+#                                     "fontSize": "18px",
+#                                     "padding": "10px 20px",
+#                                     "backgroundColor": "#6F4CFF",
+#                                     "border": "none",
+#                                     "color": "white",
+#                                     "borderRadius": "50px",
+#                                 },
+#                             ),
+#                             dbc.Button(
+#                                 "Learn More",
+#                                 href="/about",
+#                                 style={
+#                                     "margin": "10px",
+#                                     "fontSize": "18px",
+#                                     "padding": "10px 20px",
+#                                     "backgroundColor": "transparent",
+#                                     "color": "#6F4CFF",
+#                                     "border": "2px solid #6F4CFF",
+#                                     "borderRadius": "50px",
+#                                 },
+#                             ),
+#                         ]
+#                     ),
+#                 ],
+#                 style={
+#                     "maxWidth": "900px",
+#                     "backgroundColor": "#fff",
+#                     "padding": "20px 40px",  # Adjusted padding
+#                     "borderRadius": "30px",
+#                     "opacity": "0.9",
+#                     "boxSizing": "border-box",  # Ensures padding doesn't overflow
+#                     "boxShadow": "0px 4px 10px rgba(0, 0, 0, 0.1)",
+#                     "marginTop": "140px"
+#                 },
+#             ),
+#             # Features Section
+#             html.Div(
+#                 style={"marginTop": "50px", "width": "100%"},  # Adjusted for responsive width
+#                 children=[
+#                     html.H2(
+#                         "Our Features",
+#                         style={
+#                             "fontSize": "32px",
+#                             #"color": "#4a4a8d",
+#                             "color": "black", 
+#                             "marginBottom": "30px",
+#                             "fontWeight": 400,
+#                         },
+#                     ),
+#                     dbc.Row(
+#                         [
+#                             dbc.Col(
+#                                 html.Div(
+#                                     children=[
+#                                         html.H4(
+#                                             "Psychoeducation",
+#                                             style={"marginTop": "5px", "fontWeight": 500},
+#                                         ),
+#                                         html.P(
+#                                             "Learn about your mental health dynamics.",
+#                                             style={"fontSize": "17px", "color": "black", "fontWeight": 300},
+#                                         ),
+#                                     ],
+#                                     style={"textAlign": "center", "padding": "5px"},
+#                                 ),
+#                                 md=3,
+#                             ),
+#                             dbc.Col(
+#                                 html.Div(
+#                                     children=[
+#                                         html.H4(
+#                                             "Map Editor",
+#                                             style={"marginTop": "5px", "fontWeight": 500},
+#                                         ),
+#                                         html.P(
+#                                             "Build your mental-health-map.",
+#                                             style={"fontSize": "17px", "color": "black", "fontWeight": 300},
+#                                         ),
+#                                     ],
+#                                     style={"textAlign": "center", "padding": "5px"},
+#                                 ),
+#                                 md=3,
+#                             ),
+#                             dbc.Col(
+#                                 html.Div(
+#                                     children=[
+#                                         html.H4(
+#                                             "Map Tracker",
+#                                             style={"marginTop": "5px", "fontWeight": 500},
+#                                         ),
+#                                         html.P(
+#                                             "Monitor your mental-health-maps.",
+#                                             style={"fontSize": "17px", "color": "black", "fontWeight": 300},
+#                                         ),
+#                                     ],
+#                                     style={"textAlign": "center", "padding": "5px"},
+#                                 ),
+#                                 md=3,
+#                             ),
+#                         ],
+#                         justify="center",
+#                         className="g-2",  # Add gap for consistency
+#                     ),
+#                 ],
+#             ),
+#         ],
+#     )
+
 def create_demo_page():
     return html.Div(
         style={
             "textAlign": "center",
-            "padding": "50px",
-            "background": "linear-gradient(to right, white 190px, #f4f4f9 250px, #d6ccff 600px, #9b84ff 70%, #6F4CFF)",
+            "background": "linear-gradient(to bottom, white, #f4f4f9, #d6ccff, #9b84ff, #6F4CFF)",
             "fontFamily": "Outfit",
             "width": "100vw",
-            "height": "100vh",
+            "minHeight": "100vh",
             "display": "flex",
             "flexDirection": "column",
             "justifyContent": "center",
             "alignItems": "center",
             "overflowX": "hidden",
+            "marginLeft": "-12px",
         },
         children=[
             # Header Section
@@ -1658,20 +1815,19 @@ def create_demo_page():
                         style={"width": "200px", "marginBottom": "20px"},
                     ),
                     html.H1(
-                        "Welcome to PsySys",
-                        className="multi-color-text",
+                        "PsySys Demo",
                         style={
                             "fontSize": "55px",
-                            "color": "black",
+                            "color": "#4A4A8D",
                             "fontWeight": 500,
-                            "fontFamily": 'Outfit',
+                            "fontFamily": "Outfit",
                         },
                     ),
                     html.P(
                         "Discover insights, track your mental health, and gain actionable knowledge.",
                         style={"fontSize": "18px", "color": "#6c757d", "fontWeight": 300},
                     ),
-                    # Buttons Section
+
                     html.Div(
                         children=[
                             dbc.Button(
@@ -1686,6 +1842,7 @@ def create_demo_page():
                                     "border": "none",
                                     "color": "white",
                                     "borderRadius": "50px",
+                                    "boxShadow": "0px 4px 6px rgba(0, 0, 0, 0.2)"
                                 },
                             ),
                             dbc.Button(
@@ -1699,6 +1856,7 @@ def create_demo_page():
                                     "color": "#6F4CFF",
                                     "border": "2px solid #6F4CFF",
                                     "borderRadius": "50px",
+                                    "boxShadow": "0px 4px 6px rgba(0, 0, 0, 0.2)"
                                 },
                             ),
                         ]
@@ -1707,227 +1865,361 @@ def create_demo_page():
                 style={
                     "maxWidth": "900px",
                     "backgroundColor": "#fff",
-                    "padding": "20px 60px",
+                    "padding": "20px 40px",
                     "borderRadius": "30px",
+                    "opacity": "0.9",
+                    "boxShadow": "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                    "marginTop": "120px",
                 },
             ),
             # Features Section
             html.Div(
                 style={"marginTop": "50px", "width": "100%"},
                 children=[
-                    html.H2(
-                        "Our Features",
-                        style={
-                            "fontSize": "32px",
-                            "color": "#4a4a8d",
-                            "marginBottom": "30px",
-                            "fontWeight": 500,
-                        },
-                    ),
+                    # html.H2(
+                    #     "Our Features",
+                    #     style={
+                    #         "fontSize": "32px",
+                    #         "color": "black",
+                    #         "marginBottom": "30px",
+                    #         "fontWeight": 400,
+                    #     },
+                    # ),
                     dbc.Row(
                         [
+                            # Feature 1: Psychoeducation
                             dbc.Col(
-                                html.Div(
-                                    children=[
-                                        # html.I(
-                                        #     className="fas fa-brain",
-                                        #     style={
-                                        #         "fontSize": "48px",
-                                        #         #"color": "#8a8d93",
-                                        #         #"color": "#dbc9ff",
-                                        #         "color": "#4a4a8d"
-                                        #         #"textShadow": "0px 0px 2px black"
-                                        #     },
-                                        # ),
-                                        html.H4(
-                                            "Psychoeducation",
-                                            style={"marginTop": "5px", "fontWeight": 500},
-                                        ),
-                                        html.P(
-                                            "Learn about your mental health dynamics.",
-                                            style={"fontSize": "17px", "color": "#black", "fontWeight": 300},
-                                        ),
-                                    ],
-                                    style={"textAlign": "center", "padding": "5px"},  # Reduced padding
+                                html.A(
+                                    href="/psychoeducation",  # Target URL
+                                    style={"textDecoration": "none"},  # Remove underline
+                                    children=html.Div(
+                                        children=[
+                                            html.H4(
+                                                "Psychoeducation",
+                                                style={
+                                                    "marginTop": "10px",
+                                                    "fontWeight": 600,
+                                                    "color": "black",
+                                                },
+                                            ),
+                                            html.P(
+                                                "Learn about your mental dynamics.",
+                                                style={
+                                                    "fontSize": "17px",
+                                                    "color": "black",
+                                                    "fontWeight": 300,
+                                                },
+                                            ),
+                                        ],
+                                        style={
+                                            #"backgroundColor": "#A5C9FF",
+                                            "backgroundColor": "#C9E2FF",
+                                            #"backgroundColor": "#D6E9F8",
+                                            "borderRadius": "15px",
+                                            "padding": "30px 20px",
+                                            "textAlign": "center",
+                                            "boxShadow": "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                                            "transition": "transform 0.2s ease-in-out",
+                                        },
+                                        className="feature-box",
+                                    ),
                                 ),
-                                md=3,  # Narrower columns
+                                md=3,
                             ),
+                            # Feature 2: Map Editor
                             dbc.Col(
-                                html.Div(
-                                    children=[
-                                        # html.I(
-                                        #     className="fas fa-diagram-project",
-                                        #     style={
-                                        #         "fontSize": "48px",
-                                        #         #"color": "#8a8d93"
-                                        #          #"color": "#dbc9ff",
-                                        #          "color": "#4a4a8d"
-                                        #          #"textShadow": "0px 0px 2px black"
-                                        #     },
-                                        # ),
-                                        html.H4(
-                                            "Map Editor",
-                                            style={"marginTop": "5px", "fontWeight": 500},
-                                        ),
-                                        html.P(
-                                            "Build your mental-health-map.",
-                                            style={"fontSize": "17px", "color": "#black", "fontWeight": 300},
-                                        ),
-                                    ],
-                                    style={"textAlign": "center", "padding": "5px"},  # Reduced padding
+                                html.A(
+                                    href="/my-mental-health-map",  # Target URL
+                                    style={"textDecoration": "none"},
+                                    children=html.Div(
+                                        children=[
+                                            html.H4(
+                                                "Map Editor",
+                                                style={
+                                                    "marginTop": "10px",
+                                                    "fontWeight": 600,
+                                                    "color": "black",
+                                                },
+                                            ),
+                                            html.P(
+                                                "Build your mental-health-map.",
+                                                style={
+                                                    "fontSize": "17px",
+                                                    "color": "black",
+                                                    "fontWeight": 300,
+                                                },
+                                            ),
+                                        ],
+                                        style={
+                                            "backgroundColor": "#D6CCFF",
+                                            "borderRadius": "15px",
+                                            "padding": "30px 20px",
+                                            "textAlign": "center",
+                                            "boxShadow": "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                                            "transition": "transform 0.2s ease-in-out",
+                                        },
+                                        className="feature-box",
+                                    ),
                                 ),
-                                md=3,  # Narrower columns
+                                md=3,
                             ),
+                            # Feature 3: Map Tracker
                             dbc.Col(
-                                html.Div(
-                                    children=[
-                                        # html.I(
-                                        #     className="fas fa-chart-line",
-                                        #     style={
-                                        #         "fontSize": "48px",
-                                        #         #"color": "#8a8d93"
-                                        #          #"color": "#dbc9ff",
-                                        #          #"color": "#6f5a99",
-                                        #          "color": "#4a4a8d"
-                                        #          #"textShadow": "0px 0px 2px black"
-                                        #     },
-                                        # ),
-                                        html.H4(
-                                            "Map Tracker",
-                                            style={"marginTop": "5px", "fontWeight": 500},
-                                        ),
-                                        html.P(
-                                            "Monitor your mental-health-maps.",
-                                            style={"fontSize": "17px", "color": "#black", "fontWeight": 300},
-                                        ),
-                                    ],
-                                    style={"textAlign": "center", "padding": "5px"},  # Reduced padding
+                                html.A(
+                                    href="/track-my-mental-health-map",  # Target URL
+                                    style={"textDecoration": "none"},
+                                    children=html.Div(
+                                        children=[
+                                            html.H4(
+                                                "Map Tracker",
+                                                style={
+                                                    "marginTop": "10px",
+                                                    "fontWeight": 600,
+                                                    "color": "black",
+                                                },
+                                            ),
+                                            html.P(
+                                                "Monitor your mental-health-maps.",
+                                                style={
+                                                    "fontSize": "17px",
+                                                    "color": "black",
+                                                    "fontWeight": 300,
+                                                },
+                                            ),
+                                        ],
+                                        style={
+                                            "backgroundColor": "#F4D9FF",
+                                            "borderRadius": "15px",
+                                            "padding": "30px 20px",
+                                            "textAlign": "center",
+                                            "boxShadow": "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                                            "transition": "transform 0.2s ease-in-out",
+                                        },
+                                        className="feature-box",
+                                    ),
                                 ),
-                                md=3,  # Narrower columns
+                                md=3,
                             ),
                         ],
-                        justify="center",  # Force columns to stay closer
-                        className="g-0",  # Remove gutter spacing entirely
+                        justify="center",
+                        className="g-4",  # Adds spacing between columns
                     ),
                 ],
             ),
         ],
     )
 
+# Function: Create landing page
+# def create_landing_page():
+#     return html.Div(
+#         style={
+#             "height": "100vh",
+#             "width": "100%",
+#             "background": "linear-gradient(to right, white 190px, #f4f4f9 250px, #d6ccff 600px, #9b84ff 70%, #6F4CFF)",
+#             "display": "flex",
+#             "position": "relative",  # Enables absolute positioning for layers
+#             "fontFamily": "Outfit",
+#             "color": "white",
+#             "overflow": "hidden",
+            
+#         },
+#         children=[
+#             # Layered Network Images from Bottom-Left
+#             html.Div(
+#                 style={
+#                     "position": "absolute",
+#                     "top": "50%",
+#                     "left": "28%",
+#                     "zIndex": "0",  # Behind all content
+#                 },
+#                 children=[
+#                     html.Img(
+#                         src="/assets/network_2.png",
+#                         style={
+#                             "width": "600px",
+#                             "opacity": "0.7",
+#                             "transform": "rotate(10deg) translate(50px, 50px)",
+#                             "animation": "move-glow-1 2s infinite alternate"
+#                         },
+#                     ),
+#                 ]
+#             ), 
 
-def create_landing_page():
+#             html.Div(
+#                 style={
+#                     "position": "absolute",
+#                     "top": "40%",
+#                     "left": "-5%",
+#                     "zIndex": "0",  # Behind all content
+#                 },
+#                 children=[
+#                     html.Img(
+#                         src="/assets/network_3.png",
+#                         style={
+#                             "width": "900px",
+#                             "opacity": "0.5",
+#                             "transform": "rotate(35deg) translate(-100px, -50px)",
+#                             "animation": "move-glow-2 2s infinite alternate"
+#                         },
+#                     ),
+#                 ]
+#             ), 
+
+#             html.Div(
+#                 style={
+#                     "position": "absolute",
+#                     "top": "40%",
+#                     "left": "-5%",
+#                     "zIndex": "0",  # Behind all content
+#                 },
+#                 children=[
+#                     html.Img(
+#                         src="/assets/network_4.png",
+#                         style={
+#                             "width": "1200px",
+#                             "opacity": "0.3",
+#                             "transform": "rotate(-10deg) translate(-200px, -100px)",
+#                             "animation": "move-glow-3 5s infinite alternate"
+#                         },
+#                     ),
+#                 ]
+#             ), 
+
+#             # Text in Bottom-Right Corner
+#             html.Div(
+#                 style={
+#                     "position": "absolute",
+#                     "bottom": "10%",
+#                     "right": "5%",
+#                     "textAlign": "right",
+#                     "zIndex": "1",  # Above the network images
+#                 },
+#                 children=[
+#                     html.H1(
+#                         "PsySys",
+#                         style={
+#                             "fontSize": "60px",
+#                             "fontWeight": "bold",
+#                             "marginBottom": "20px",
+#                             "color": "white",
+#                         },
+#                     ),
+#                     html.P(
+#                         "Leveraging the network approach to psychopathology to empower patients.",
+#                         style={
+#                             "fontSize": "25px",
+#                             "fontWeight": "300",
+#                             "maxWidth": "500px",
+#                             "margin": "0 auto",
+#                             "color": "white",
+#                         },
+#                     ),
+#                     # Call-to-Action Buttons
+#                     html.Div(
+#                         style={"marginTop": "30px", "display": "flex", "gap": "10px", "justifyContent": "flex-end"},
+#                         children=[
+#                             dbc.Button(
+#                                 "Get Started",
+#                                 href="/get-started",
+#                                 style={
+#                                     "backgroundColor": "#FFFFFF",
+#                                     "color": "#6F4CFF",
+#                                     "padding": "15px 30px",
+#                                     "borderRadius": "50px",
+#                                     "fontSize": "18px",
+#                                     "fontWeight": "500",
+#                                     "border": "none",
+#                                 },
+#                             ),
+#                             dbc.Button(
+#                                 "Learn More",
+#                                 href="/learn-more",
+#                                 style={
+#                                     "backgroundColor": "transparent",
+#                                     "color": "white",
+#                                     "padding": "15px 30px",
+#                                     "borderRadius": "50px",
+#                                     "fontSize": "18px",
+#                                     "fontWeight": "500",
+#                                     "border": "2px solid white",
+#                                 },
+#                             ),
+#                         ],
+#                     ),
+#                 ],
+#             ),
+#         ],
+#     )
+
+
+def create_learn_more_page():
     return html.Div(
         style={
-            "height": "100vh",
+            "minHeight": "100vh",
             "width": "100vw",
-            "background": "linear-gradient(to right, white 190px, #f4f4f9 250px, #d6ccff 600px, #9b84ff 70%, #6F4CFF)",
-            "display": "flex",
-            "position": "relative",  # Enables absolute positioning for layers
+            "background": "linear-gradient(to right, white 190px, #f4f4f9 250px, #d6ccff 600px, #9b84ff 70%, #6F4CFF)",  # Match existing gradient
             "fontFamily": "Outfit",
-            "color": "white",
-            "overflow": "hidden",
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "padding": "50px 20px",
+            "color": "#333333",  # Dark text for readability
         },
         children=[
-            # Layered Network Images from Bottom-Left
+            # Page Title
+            html.H1(
+                "What is PsySys?",
+                style={
+                    "fontSize": "48px",
+                    "fontWeight": "bold",
+                    "color": "#4A4A8D",
+                    "marginBottom": "30px",
+                },
+            ),
+            # Content Container
             html.Div(
                 style={
-                    "position": "absolute",
-                    "top": "50%",
-                    "left": "28%",
-                    "zIndex": "0",  # Behind all content
+                    "maxWidth": "800px",
+                    "backgroundColor": "rgba(255, 255, 255, 0.8)",  # Semi-transparent white
+                    "padding": "30px",
+                    "borderRadius": "15px",
+                    "boxShadow": "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                    "textAlign": "left",
                 },
                 children=[
-                    html.Img(
-                        src="/assets/network_2.png",
-                        style={
-                            "width": "600px",
-                            "opacity": "0.7",
-                            "transform": "rotate(10deg) translate(50px, 50px)",
-                            "animation": "move-glow-1 2s infinite alternate"
-                        },
-                    ),
-                ]
-            ), 
-
-            html.Div(
-                style={
-                    "position": "absolute",
-                    "top": "40%",
-                    "left": "-5%",
-                    "zIndex": "0",  # Behind all content
-                },
-                children=[
-                    html.Img(
-                        src="/assets/network_3.png",
-                        style={
-                            "width": "900px",
-                            "opacity": "0.5",
-                            "transform": "rotate(35deg) translate(-100px, -50px)",
-                            "animation": "move-glow-2 2s infinite alternate"
-                        },
-                    ),
-                ]
-            ), 
-
-            html.Div(
-                style={
-                    "position": "absolute",
-                    "top": "40%",
-                    "left": "-5%",
-                    "zIndex": "0",  # Behind all content
-                },
-                children=[
-                    html.Img(
-                        src="/assets/network_4.png",
-                        style={
-                            "width": "1200px",
-                            "opacity": "0.3",
-                            "transform": "rotate(-10deg) translate(-200px, -100px)",
-                            "animation": "move-glow-3 5s infinite alternate"
-                        },
-                    ),
-                ]
-            ), 
-
-            # Text in Bottom-Right Corner
-            html.Div(
-                style={
-                    "position": "absolute",
-                    "bottom": "10%",
-                    "right": "5%",
-                    "textAlign": "right",
-                    "zIndex": "1",  # Above the network images
-                },
-                children=[
-                    html.H1(
-                        "PsySys",
-                        style={
-                            "fontSize": "60px",
-                            "fontWeight": "bold",
-                            "marginBottom": "20px",
-                            "color": "white",
-                        },
+                    # Text Content
+                    html.P(
+                        "PsySys is an innovative mental health platform designed to empower individuals with personalized insights, "
+                        "interactive tools, and actionable data. Our mission is to bridge the gap between technology and emotional well-being, "
+                        "helping users understand, monitor, and improve their mental health journey.",
+                        style={"fontSize": "18px", "lineHeight": "1.6", "marginBottom": "20px", "fontWeight": 300},
                     ),
                     html.P(
-                        "Leveraging the network approach to psychopathology to empower patients.",
+                        "By leveraging advanced data analysis and visualization techniques, PsySys enables users to build and track their own "
+                        "mental health maps, identify key factors, and collaborate with professionals or peers. Whether you're looking to better "
+                        "understand your mental health dynamics or take actionable steps toward improvement, PsySys is here to guide you.",
+                        style={"fontSize": "18px", "lineHeight": "1.6", "marginBottom": "20px"},
+                    ),
+                    # Images for Visual Appeal
+                    html.Img(
+                        src="/assets/mental-health-illustration.png",
                         style={
-                            "fontSize": "25px",
-                            "fontWeight": "300",
-                            "maxWidth": "500px",
-                            "margin": "0 auto",
-                            "color": "white",
+                            "width": "100%",
+                            "marginBottom": "20px",
+                            "borderRadius": "10px",
+                            "boxShadow": "0px 2px 6px rgba(0, 0, 0, 0.1)",
                         },
                     ),
                     # Call-to-Action Buttons
                     html.Div(
-                        style={"marginTop": "30px", "display": "flex", "gap": "10px", "justifyContent": "flex-end"},
+                        style={"display": "flex", "gap": "20px", "justifyContent": "center"},
                         children=[
                             dbc.Button(
                                 "Get Started",
                                 href="/get-started",
                                 style={
-                                    "backgroundColor": "#FFFFFF",
-                                    "color": "#6F4CFF",
+                                    "backgroundColor": "#6F4CFF",
+                                    "color": "white",
                                     "padding": "15px 30px",
                                     "borderRadius": "50px",
                                     "fontSize": "18px",
@@ -1936,21 +2228,828 @@ def create_landing_page():
                                 },
                             ),
                             dbc.Button(
-                                "Learn More",
-                                href="/learn-more",
+                                "Back to Home",
+                                href="/",
                                 style={
                                     "backgroundColor": "transparent",
-                                    "color": "white",
+                                    "color": "#6F4CFF",
                                     "padding": "15px 30px",
                                     "borderRadius": "50px",
                                     "fontSize": "18px",
                                     "fontWeight": "500",
-                                    "border": "2px solid white",
+                                    "border": "2px solid #6F4CFF",
                                 },
                             ),
                         ],
                     ),
                 ],
+            ),
+        ],
+    )
+
+# def create_landing_page():
+#     return html.Div(
+#         style={
+#             "height": "100vh",
+#             "width": "100vw",
+#             "background": "linear-gradient(to bottom, white, #f4f4f9, #d6ccff, #9b84ff, #6F4CFF)",
+#             "display": "flex",
+#             "alignItems": "center",
+#             "justifyContent": "center",
+#             "position": "relative",
+#             "fontFamily": "Outfit",
+#             "color": "white",
+#             "overflow": "hidden",
+#             "marginLeft": "-12px"
+#         },
+#         children=[
+#             # Layered Network Images from Bottom-Left
+#             html.Div(
+#                 style={
+#                     "position": "absolute",
+#                     "bottom": "-30%",
+#                     "left": "-20%",
+#                     "zIndex": "0",
+#                 },
+#                 children=[
+#                     html.Img(
+#                         src="/assets/network_2.png",
+#                         style={
+#                             "width": "600px",
+#                             "opacity": "0.7",
+#                             "transform": "rotate(15deg)",
+#                             "animation": "move-glow-1 4s infinite alternate",
+#                         },
+#                     ),
+#                 ],
+#             ),
+#             html.Div(
+#                 style={
+#                     "position": "absolute",
+#                     "bottom": "-50%",
+#                     "left": "10%",
+#                     "zIndex": "0",
+#                 },
+#                 children=[
+#                     html.Img(
+#                         src="/assets/network_3.png",
+#                         style={
+#                             "width": "900px",
+#                             "opacity": "0.5",
+#                             "transform": "rotate(-10deg)",
+#                             "animation": "move-glow-2 5s infinite alternate",
+#                         },
+#                     ),
+#                 ],
+#             ),
+#             html.Div(
+#                 style={
+#                     "position": "absolute",
+#                     "bottom": "-70%",
+#                     "left": "5%",
+#                     "zIndex": "0",
+#                 },
+#                 children=[
+#                     html.Img(
+#                         src="/assets/network_4.png",
+#                         style={
+#                             "width": "1200px",
+#                             "opacity": "0.3",
+#                             "transform": "rotate(10deg)",
+#                             "animation": "move-glow-3 6s infinite alternate",
+#                         },
+#                     ),
+#                 ],
+#             ),
+            
+#             # Main Content (Centered)
+#             html.Div(
+#                 style={
+#                     "position": "relative",
+#                     "zIndex": "1",
+#                     "textAlign": "center",
+#                     "maxWidth": "800px",
+#                     "color": "white",
+#                     "margin": "0 auto",
+#                 },
+#                 children=[
+#                     html.H1(
+#                         "Welcome to PsySys",
+#                         style={
+#                             "fontSize": "60px",
+#                             "fontWeight": "bold",
+#                             "marginBottom": "20px",
+#                             "color": "#4A4A8D",
+#                             #"color": "white",
+#                         },
+#                     ),
+#                     html.P(
+#                         "Leveraging the network approach to psychopathology to empower patients.",
+#                         style={
+#                             "fontSize": "23px",
+#                             "fontWeight": "300",
+#                             "lineHeight": "1.6",
+#                             "marginBottom": "30px",
+#                             "color": "#4A4A8D",
+#                         },
+#                     ),
+#                     # Call-to-Action Buttons
+#                     html.Div(
+#                         style={"display": "flex", "justifyContent": "center", "gap": "15px"},
+#                         children=[
+#                             dbc.Button(
+#                                 #"Get Started",
+#                                 "View Demo",
+#                                 href="/get-started",
+#                                 style={
+#                                     "backgroundColor": "#6F4CFF",
+#                                     "color": "white",
+#                                     "padding": "15px 30px",
+#                                     "borderRadius": "50px",
+#                                     "fontSize": "18px",
+#                                     "fontWeight": "500",
+#                                     "border": "none",
+#                                     "boxShadow": "0px 4px 6px rgba(0, 0, 0, 0.2)",
+#                                 },
+#                             ),
+#                             dbc.Button(
+#                                 "Learn More",
+#                                 href="/learn-more",
+#                                 style={
+#                                     "backgroundColor": "transparent",
+#                                     "color": "white",
+#                                     "padding": "15px 30px",
+#                                     "borderRadius": "50px",
+#                                     "fontSize": "18px",
+#                                     "fontWeight": "500",
+#                                     "border": "2px solid white",
+#                                     "boxShadow": "0px 4px 6px rgba(0, 0, 0, 0.1)",
+#                                 },
+#                             ),
+#                         ],
+#                     ),
+#                 ],
+#             ),
+#         ],
+#     )
+
+def create_landing_page():
+    return html.Div(
+        style={
+            "height": "100vh",
+            "width": "100vw",
+            "background": "linear-gradient(to bottom, white, #f4f4f9, #d6ccff, #9b84ff, #6F4CFF)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "position": "relative",
+            "fontFamily": "Outfit",
+            "color": "white",
+            "overflow": "hidden",
+            "marginLeft": "-12px"
+        },
+        children=[
+            # Top-left network image
+            html.Div(
+                style={
+                    "position": "absolute",
+                    "top": "5%",
+                    "left": "0%",
+                    "zIndex": "0",
+                },
+                children=[
+                    html.Img(
+                        src="/assets/network_2.png",
+                        style={
+                            "width": "500px",
+                            "opacity": "0.5",
+                            "transform": "rotate(15deg)",
+                        },
+                    ),
+                ],
+            ),
+            # Bottom-left network image
+            html.Div(
+                style={
+                    "position": "absolute",
+                    "bottom": "0%",
+                    "left": "-10%",
+                    "zIndex": "0",
+                },
+                children=[
+                    html.Img(
+                        src="/assets/network_3.png",
+                        style={
+                            "width": "600px",
+                            "opacity": "0.6",
+                            "transform": "rotate(-10deg)",
+                        },
+                    ),
+                ],
+            ),
+            # Bottom-right network image
+            html.Div(
+                style={
+                    "position": "absolute",
+                    "bottom": "-10%",
+                    "right": "-5%",
+                    "zIndex": "0",
+                },
+                children=[
+                    html.Img(
+                        src="/assets/network_4.png",
+                        style={
+                            "width": "900px",
+                            "opacity": "0.4",
+                            "transform": "rotate(10deg)",
+                        },
+                    ),
+                ],
+            ),
+            # Top-right network image
+            html.Div(
+                style={
+                    "position": "absolute",
+                    "top": "0%",
+                    "right": "0%",
+                    "zIndex": "0",
+                },
+                children=[
+                    html.Img(
+                        src="/assets/network_2.png",
+                        style={
+                            "width": "600px",
+                            "opacity": "0.3",
+                            "transform": "rotate(-15deg)",
+                        },
+                    ),
+                ],
+            ),
+            # Gradient Overlay to clear center
+            html.Div(
+                style={
+                    "position": "absolute",
+                    "top": "0",
+                    "left": "0",
+                    "width": "100%",
+                    "height": "100%",
+                    "background": "radial-gradient(circle, rgba(255,255,255,0.7) 10%, transparent 60%)",
+                    "zIndex": "0",
+                },
+            ),
+            # Main Content (Centered)
+            html.Div(
+                style={
+                    "position": "relative",
+                    "zIndex": "1",
+                    "textAlign": "center",
+                    "maxWidth": "800px",
+                    "color": "white",
+                    "margin": "0 auto",
+                },
+                children=[
+                    html.H1(
+                        "Welcome to PsySys",
+                        style={
+                            "fontSize": "60px",
+                            "fontWeight": "bold",
+                            #"fontWeight": 500,
+                            "marginBottom": "20px",
+                            "color": "#4A4A8D",
+                        },
+                    ),
+                    html.P(
+                        "Leveraging the network approach to psychopathology to empower patients.",
+                        style={
+                            "fontSize": "23px",
+                            "fontWeight": "300",
+                            "lineHeight": "1.6",
+                            "marginBottom": "30px",
+                            "color": "#4A4A8D",
+                        },
+                    ),
+                    # Call-to-Action Buttons
+                    html.Div(
+                        style={"display": "flex", "justifyContent": "center", "gap": "15px"},
+                        children=[
+                            dbc.Button(
+                                "View Demo",
+                                href="/psysys-demo",
+                                style={
+                                    "backgroundColor": "#6F4CFF",
+                                    "color": "white",
+                                    "padding": "15px 30px",
+                                    "borderRadius": "50px",
+                                    "fontSize": "18px",
+                                    "fontWeight": "500",
+                                    "border": "none",
+                                    "boxShadow": "0px 4px 6px rgba(0, 0, 0, 0.2)",
+                                },
+                            ),
+                            dbc.Button(
+                                "Learn More",
+                                href="/about",
+                                style={
+                                    "backgroundColor": "transparent",
+                                    "color": "#6F4CFF",
+                                    "padding": "15px 30px",
+                                    "borderRadius": "50px",
+                                    "fontSize": "18px",
+                                    "fontWeight": "500",
+                                    "border": "2px solid #6F4CFF",
+                                    "boxShadow": "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                                },
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        ],
+    )
+
+
+def create_about(app, translation):
+    return html.Div(
+        style={
+            "minHeight": "100vh",
+            "width": "100vw",
+            #"background": "linear-gradient(to right, white 190px, #f4f4f9 250px, #d6ccff 600px, #9b84ff 70%, #6F4CFF)",
+            "background": "linear-gradient(to bottom, white, #f4f4f9, #d6ccff, #9b84ff, #6F4CFF)",
+            "fontFamily": "Outfit",
+            "padding": "50px 20px",
+            "overflowX": "hidden",  # Prevent horizontal scrolling
+            "marginLeft": "-12px"
+        },
+        children=[
+            # Mission Statement
+            # html.Div(
+            #     style={
+            #         "textAlign": "center",
+            #         "padding": "20px",
+            #         "marginBottom": "50px",
+            #         "color": "#FFFFFF",
+            #     },
+            #     # children=[
+            #     #     html.H2(
+            #     #         "Share Knowledge. Empower People.",
+            #     #         style={
+            #     #             "fontSize": "48px",
+            #     #             "fontWeight": "bold",
+            #     #         },
+            #     #     ),
+            #     # ],
+            # ),
+            html.Div(style={"height": "105px"}),
+
+            # Team Section
+            html.Div(
+                children=[
+                    html.H3(
+                        "Our Team",
+                        #className="multi-color-text",
+                        style={
+                            "textAlign": "center",
+                            "fontSize": "36px",
+                            "color": "#4A4A8D",
+                            #"color": "#6F4CFF",
+                            "marginBottom": "30px",
+                        },
+                    ),
+                    dbc.Row(
+                        [
+                            # Team Members
+                            create_team_member(
+                                app,
+                                "Emily Campos Sindermann",
+                                "DSC_5008.JPG",
+                                #translation['freelance'],
+                                "PsySys Lead & Developer",
+                                translation['role_01'],
+                            ),
+                            create_team_member(
+                                app,
+                                "Denny Borsboom",
+                                "profile_dennyborsboom.jpeg",
+                                "Professor @ Psychological Methods, University of Amsterdam",
+                                translation['role_02'],
+                            ),
+                            create_team_member(
+                                app,
+                                "Tessa Blanken",
+                                "profile_tessablanken.jpeg",
+                                "Assistant Professor @ Psychological Methods, University of Amsterdam",  
+                                translation['role_03'],
+                            ),
+                            create_team_member(
+                                app,
+                                "Lars Klintwall",
+                                "profile_larsklintwall.jpeg",
+                                "Clinician & Post-Doc @ Clinical Neuroscience, Karolinska Institute",
+                                translation['role_04'],
+                            ),
+                        ],
+                        justify="center",
+                        style={"gap": "30px"},  # Uniform spacing between team members
+                    ),
+                ],
+                style={"marginBottom": "50px"},
+            ),
+            # Collaborators Section
+            html.Div(
+                children=[
+                    html.H3(
+                        "Collaborators",
+                        style={
+                            "textAlign": "center",
+                            "fontSize": "36px",
+                            "color": "#4A4A8D",
+                            "marginBottom": "30px",
+                        },
+                    ),
+                    dbc.Row(
+                        [
+                            create_team_member(
+                                app, 
+                                "Julian Burger",
+                                "profile_julianburger.jpeg", 
+                                "Post-Doc @ Yale School of Public Health",
+                                translation['role_04']),
+                            create_team_member(
+                                app, 
+                                "Mark Willems",
+                                "mark_willems_2.jpeg", 
+                                "Founder & CEO @ Birdt Health",
+                                translation['role_04'],),
+                            create_team_member(
+                                app, 
+                                "Felix Vogel",
+                                "felix_vogel.jpeg", 
+                                "Interim Professor @ University of Hamburg",
+                                translation['role_04'],),
+                        ],
+                        justify="center",
+                        style={"gap": "30px"},  # Consistent spacing between collaborators
+                    ),
+                ],
+                style={"marginBottom": "50px"},
+            ),
+            # Supporters Section
+            # html.Div(
+            #     children=[
+            #         html.H3(
+            #             "Supporters",
+            #             style={
+            #                 "textAlign": "center",
+            #                 "fontSize": "36px",
+            #                 "color": "#4A4A8D",
+            #                 "marginBottom": "30px",
+            #             },
+            #         ),
+            #         dbc.Row(
+            #             [
+            #                 html.Div(
+            #                     html.Img(src=app.get_asset_url('Amsterdamuniversitylogo.svg.png'), style=SUPPORTER_LOGO_STYLE),
+            #                     style={"textAlign": "center"},
+            #                 ),
+            #                 html.Div(
+            #                     html.Img(src=app.get_asset_url('birdt-health-logo.jpeg'), style=SUPPORTER_LOGO_STYLE),
+            #                     style={"textAlign": "center"},
+            #                 ),
+            #                 html.Div(
+            #                     html.Img(src=app.get_asset_url('another-supporter-logo.png'), style=SUPPORTER_LOGO_STYLE),
+            #                     style={"textAlign": "center"},
+            #                 ),
+            #             ],
+            #             justify="center",
+            #             style={"gap": "30px"},  # Horizontal layout for supporters
+            #         ),
+            #     ],
+            #     style={"marginBottom": "50px"},
+            # ),
+
+            # Supporters Section
+            html.Div(
+                children=[
+                    html.H3(
+                        "Supporters",
+                        style={
+                            "textAlign": "center",
+                            "fontSize": "36px",
+                            "color": "#4A4A8D",
+                            "marginBottom": "30px",
+                        },
+                    ),
+                    dbc.Row(
+                        [
+                            create_supporter(app, 'uva-logo-3.png', "Granted the PsySys project an Impact Grant of €25.000  in April 2024."),
+                            create_supporter(app, 'dptv-logo.png', "Awarded the PsySys project with the master-research award 2024 endowed with €1000."),
+                            create_supporter(app, 'zü-logo.webp', "Supported the improvement of the PsySys demo with usability feedback."),
+                        ],
+                        justify="center",
+                        style={"gap": "30px"},  # Consistent spacing between supporters
+                    ),
+                ],
+                style={"marginBottom": "50px"},
+            ),
+
+            # Contact Us Section
+            html.Div(
+                style={
+                    "textAlign": "center",
+                    "marginTop": "50px",
+                    "position": "relative",
+                },
+                children=[
+                    dbc.Button(
+                        "Contact Us",
+                        href="mailto:campos.sindermann@gmail.com?subject=Inquiry%20for%20PsySys%20App&",
+                        style={
+                            "backgroundColor": "transparent",
+                            "color": "white",
+                            "padding": "15px 30px",
+                            "borderRadius": "50px",
+                            "fontSize": "18px",
+                            "fontWeight": "500",
+                            "border": "2px solid white",
+                            "boxShadow": "0px 4px 6px rgba(0, 0, 0, 0.2)"
+                        },
+                    ),
+                ],
+            ),
+        ],
+    )
+
+
+# Helper Function for Team Member
+def create_team_member(app, name, img, institution, role):
+    return dbc.Col(
+        html.Div(
+            style={
+                "textAlign": "center",
+                "width": "200px",  # Fixed width ensures uniform spacing
+                "margin": "0 auto",
+            },
+            children=[
+                html.Img(
+                    src=app.get_asset_url(img),
+                    style={
+                        "width": "160px",  # Increased size
+                        "height": "160px",
+                        "borderRadius": "50%",  # Circle images
+                        "marginBottom": "10px",
+                    },
+                ),
+                html.P(
+                    name,
+                    style={"fontWeight": 500, "color": "#4A4A8D", "fontSize": "19px"},
+                ),
+                html.P(institution, style={"color": "#black", "fontSize": "16px", "fontWeight": 300}),
+                # html.P(role, style={"color": "#6c757d", "fontSize": "14px"}),
+            ],
+        ),
+        width="auto",  # Dynamically adjust to fit content
+    )
+
+
+# Helper Function for Collaborator
+# Helper Function for Supporter with Logo and Text
+def create_supporter(app, img, description):
+    return dbc.Col(
+        html.Div(
+            style={
+                "textAlign": "center",
+                "width": "230px",  # Consistent width for each supporter
+                "margin": "0 auto",
+            },
+            children=[
+                html.Img(
+                    src=app.get_asset_url(img),
+                    style={
+                        "width": "200px",  # Adjust logo size
+                        "height": "130px",  # Maintain aspect ratio
+                        "borderRadius": "15px",  # Rounded edges
+                        "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)",  # Optional shadow
+                        "marginBottom": "10px",
+                    },
+                ),
+                html.P(
+                    description,
+                    style={
+                        "fontSize": "16px",
+                        "fontWeight": 300,
+                        "color": "#black",  # Subtle gray text color
+                        "marginTop": "5px",
+                    },
+                ),
+            ],
+        ),
+        width="auto",  # Dynamically adjust to fit content
+    )
+
+
+# Styles
+SUPPORTER_LOGO_STYLE = {
+    "width": "120px",  # Slightly larger for visual balance
+    "height": "120px",
+    "borderRadius": "50%",  # Circular logos
+}
+
+COLLABORATOR_STYLE = {
+    "width": "140px",
+    "height": "140px",
+    "borderRadius": "50%",  # Circular collaborator images
+}
+
+import dash_bootstrap_components as dbc
+from dash import html
+
+
+def create_output_page():
+    # Helper function to create a single output box
+    def create_output_box(image, tag, title, action, action_link):
+        return html.Div(
+            style={
+                "width": "400px",
+                "backgroundColor": "white",
+                "borderRadius": "15px",
+                "boxShadow": "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                "overflow": "hidden",
+                "display": "flex",
+                "flexDirection": "column",
+            },
+            children=[
+                # Image Section
+                html.Div(
+                    style={"position": "relative"},
+                    children=[
+                        html.Img(
+                            src=image,
+                            style={
+                                "width": "100%",
+                                "height": "200px",
+                                "objectFit": "cover",
+                            },
+                        ),
+                        # Tag
+                        html.Div(
+                            tag,
+                            style={
+                                "position": "absolute",
+                                "top": "10px",
+                                "right": "10px",
+                                "backgroundColor": "#6F4CFF",
+                                "color": "white",
+                                "padding": "5px 10px",
+                                "borderRadius": "20px",
+                                "fontSize": "12px",
+                                "fontWeight": "bold",
+                            },
+                        ),
+                    ],
+                ),
+                # Content Section
+                html.Div(
+                    style={
+                        "padding": "15px",
+                        "flex": "1",  # Ensure content takes up remaining space
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "justifyContent": "space-between",
+                    },
+                    children=[
+                        # Title
+                        html.H4(
+                            title,
+                            style={
+                                "marginBottom": "10px",
+                                "color": "#4A4A8D",
+                                #"color": "black",
+                                "fontSize": "18px",
+                                #"fontWeight": "bold",
+                                "fontWeight": 400
+                            },
+                        ),
+                        # Action Link
+                        html.A(
+                            action,
+                            href=action_link,
+                            style={
+                                "fontSize": "14px",
+                                "color": "#6F4CFF",
+                                # "fontWeight": "bold"
+                                "fontWeight": 500,
+                                "textDecoration": "none",
+                            },
+                        ),
+                    ],
+                ),
+            ],
+        )
+
+    # Main Page Layout
+    return html.Div(
+        style={
+            "width": "100vw",
+            "minHeight": "100vh",
+            "background": "linear-gradient(to bottom, white, #f4f4f9, #d6ccff, #9b84ff, #6F4CFF)",
+            "padding": "50px",
+            "fontFamily": "Outfit",
+            "marginLeft": "-12px"
+        },
+        children=[
+            # Header Section
+            # html.Div(style={"height": "150px"}),
+            html.Div(style={"height": "100px"}),
+
+            html.Div(
+                "Output",
+                style={
+                    "textAlign": "center",
+                    "fontSize": "36px",
+                    "color": "#4A4A8D",
+                    #"color":"black",
+                    "marginBottom": "40px",
+                    "fontWeight": "500",
+                },
+            ),
+            # Outputs Section
+            dbc.Container(
+                [
+                    # First Row
+                    dbc.Row(
+                        [
+                            dbc.Col(
+                                create_output_box(
+                                    "/assets/master_thesis.jpg",
+                                    "MASTER THESIS",
+                                    #"It's All About Perspective: Introducing PsySys as a Digital Network-Informed Psychoeducation for Depression",
+                                    "Master Thesis",
+                                    "Download >>",
+                                    "/path/to/master-thesis",
+                                ),
+                                width=4,
+                            ),
+                            dbc.Col(
+                                create_output_box(
+                                    "/assets/dptv_bild.jpg",
+                                    "ARTICLE",
+                                    "Article",
+                                    "Read more >>",
+                                    "/path/to/article",
+                                ),
+                                width=4,
+                            ),
+                            dbc.Col(
+                                create_output_box(
+                                    "/assets/blog.jpg",
+                                    "BLOG",
+                                    "Blog Article",
+                                    "Read more >>",
+                                    "/path/to/blog-article",
+                                ),
+                                width=4,
+                            ),
+                        ],
+                        justify="center",
+                        className="mb-4",
+                    ),
+                    # Second Row
+                    dbc.Row(
+                        [
+                            dbc.Col(
+                                create_output_box(
+                                    "/assets/system_thinking.jpg",
+                                    "BLOG",
+                                    "System Thinking",
+                                    "Read more >>",
+                                    "/path/to/system-thinking",
+                                ),
+                                width=4,
+                            ),
+                            dbc.Col(
+                                create_output_box(
+                                    "/assets/complex_systems.jpg",
+                                    "BLOG",
+                                    "Complex Systems",
+                                    "Read more >>",
+                                    "/path/to/complex-systems",
+                                ),
+                                width=4,
+                            ),
+                            dbc.Col(
+                                create_output_box(
+                                    "/assets/paper.jpg",
+                                    "PAPER",
+                                    "Paper (Incoming)",
+                                    "Read more >>",
+                                    "/path/to/paper",
+                                ),
+                                width=4,
+                            ),
+                        ],
+                        justify="center",
+                    ),
+                ]
             ),
         ],
     )
