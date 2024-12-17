@@ -305,6 +305,26 @@ body {
     transition: box-shadow 0.5s ease-in-out;
 }
 
+/* NavLink Style */
+.nav-link-custom {
+    color: #4A4A8D; /* Default color */
+    font-weight: 300; /* Light font weight */
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect */
+.nav-link-custom:hover {
+    color: #6F4CFF; /* Color on hover */
+}
+
+/* Active State */
+.nav-link-custom.active {
+    color: #6F4CFF; /* Color for active NavLink */
+    font-weight: 400; /* Slightly bolder font for active state */
+}
+
 /* Sticky container for text block and dropdown */
 .sticky-container {
     position: sticky;
@@ -423,7 +443,60 @@ body {
     }
 }
 
+.feature-box:hover {
+    transform: scale(1.05); /* Slightly enlarge box on hover */
+    cursor: pointer;        /* Show pointer cursor */
+}
 
+
+/* Dropdown Container */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 1000;
+    overflow: hidden; /* Ensure clean box edges */
+}
+
+.dropdown-content .dropdown-link {
+    display: block;
+    padding: 12px 20px;
+    color: #4A4A8D;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content .dropdown-link:hover {
+    background-color: #F4F4FF; /* Light background hover */
+    color: #6F4CFF;
+}
+
+/* Show Dropdown on Hover */
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+
+/* Optional: Rounded Edge for Sub-Dropdown Items */
+.dropdown-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
 
 
 
