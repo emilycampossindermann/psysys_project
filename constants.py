@@ -224,7 +224,58 @@ translations = {
         'birdt': "With advisory support from Mark Willems (Founder & CEO Birdt Health)",
         'example_block_04': ("Example: If you feel like your Overthinking is the most central factor ", 
                              "in your map, select it here. If you're unsure, you don't have to select one."),
-        'hover-plots': "Switch between plots"
+        'hover-plots': "Switch between plots",
+        "about-1-1":("The PsySys Project"),
+        "about-1-2":("Within the PsySys (Psychological Systems Education) project we aim to develop and evaluate a "
+                    "psychoeducational platform that leverages the network approach to psychopathology for therapeutic"
+                    " support. PsySys is designed is to educate users on their mental health and empower them to better "
+                    " understand and monitor their personal healing journey. "),
+        "about-2-1":("Our Mission"),
+        "about-2-2":("PsySys aims to enhance mental health care by providing and accessible, evidence-based tool "
+                    "that helps map and address the dynamic relationships between symptoms. Thereby PsySys encourages a "
+                    "deeper understanding of mental health and encourages more personalized approaches to care."),
+        "about-3-1":("Our Vision"),
+        "about-3-2":("We envision PsySys as a bridge between research and practice, offering clinicians and clients "
+                    "a new way to understand mental health challenges, and researchers a tool to explore them. "
+                    "By moving beyond traditional diagnostic frameworks, PsySys helps to promote an individualized and dynamic"
+                    " perspective onto mental health."),
+        "get-started": "Get Started",
+        "back-home": "Back to Home",
+        "welcome-landing": "Welcome to PsySys",
+        "sub-landing": "Leveraging the network approach to psychopathology to empower patients.",
+        "view-demo": "View Demo",
+        "learn-more": "Learn More",
+        "demo": "Discover insights, track your mental health, and gain actionable knowledge.",
+        "psychoeducation": "Psychoeducation",
+        "psychoeducation-sub": "Learn about your mental dynamics.",
+        "editor": "Map Editor",
+        "editor-sub": "Build your mental-health-map.",
+        "tracker": "Map Tracker",
+        "tracker-sub": "Monitor your mental-health-maps.",
+        "exercise-0": ("Watch the video. Then click on 'Start' to begin with the session which will guide you through the following blocks:"),
+        "exercise-1": ("Watch the video. Then select the factors you are currently dealing with from the list below "
+                       "and indicate their severity."),
+        "exercise-2": ("Watch the video. Then select two causal chains you recognize from yourself. Include as many "
+                       "factors as you like."),
+        "example-2-1": ("e.g. If you have trouble sleeping, which impairs your ability to concentrate, select "
+                        "'Sleep problems', 'Trouble concentrating'."),
+        "example-2-2": ("e.g. If your fear of the future increases your feelings of hopelesness, which in turn "
+                        "worsens your anxiety, select 'Fear of the future', 'Hopelesness', 'Anxiety'."),
+        "exercise-3": ("Watch the video. Then select two vicious cycles you recognize from yourself. Include as many "
+                       "factors as you like."),
+        "example-3-1": ("e.g. If you have trouble sleeping, which increases your anxiety, which worsens your sleep, "
+                        "select 'Sleep problems', 'Anxiety'."),
+        "example-3-2": ("e.g. If your social isolation leads to self-neglect which increases your shame and only worsens your "
+                        "isolation, select 'Social isolation', 'Self-neglect', 'Shame'."),
+        "exercise-4": ("Watch the video. Then select the factor you feel like is the most influential one in your mental-health-map."),
+        "psysys-steps": ["Intro", "Personal Factors", "Causal Chains", "Vicious Cycles", "Finding Targets", "Finish"],
+        "edit-text": ("Load your PsySys map or upload an existing map file to edit. Extend your map and explore different visualizations. Download your map as a file or image or donate it to our project."),
+        "uva-support": ("Granted the PsySys project an Impact Grant of €25.000  in April 2024."),
+        "dptv-support": ("Awarded the PsySys project with the master-research award 2024 endowed with €1000."),
+        "zu-support": ("Supported the improvement of the PsySys demo with usability feedback."),
+        "read-more": "Read more",
+        "back": "Back",
+        "coming-soon": "Coming soon"
     },
     'de': {
         # 'factors': ["Interessenverlust", "Traurigkeit", "Motivationsverlust", "Stress", "Sorgen", "Überdenken", 
@@ -394,7 +445,55 @@ translations = {
         'birdt': "Mit beratender Unterstützung von Mark Willems (Gründer & CEO Birdt Health)",
         'example_block_04': ("Beispiel: Wenn Du das Gefühl hast, dass Deine Ängste der wichtigste Faktor ",
                              "in Deiner Map ist, wähle dies aus. Wenn Du unsicher bist, musst Du keinen Faktor auswählen."),
-        'hover-plots': "Wechsle zwischen Plots"
+        'hover-plots': "Wechsle zwischen Plots",
+        "about-1-1":"Das PsySys Projekt",
+        "about-1-2":("Im Rahmen des Projekts PsySys (Psychological Systems Education) wollen wir eine Psychoedukationsplattform "
+                     "entwickeln, die den Netzwerkansatz der Psychopathologie in die psychotherapeutische Versorgung integriert. "
+                     "PsySys soll Nutzer:innen dabei unterstützen, ihre psychische Gesundheit besser zu verstehen und "
+                     "sie befähigen, ihren individuellen Heilungsprozess aktiv mitzugestalten und nachzuvollziehen."),
+        "about-2-1":"Unsere Mission",
+        "about-2-2":("PsySys hat das Ziel, die psychische Gesundheitsversorgung zu verbessern, indem es ein zugängliches, "
+        "evidenzbasiertes Werkzeug bereitstellt, das dabei hilft, die dynamischen Beziehungen zwischen Symptomen zu "
+        "erkennen und anzugehen. Dadurch fördert PsySys ein tieferes Verständnis von psychischer Gesundheit und "
+        "unterstützt individuellere Ansätze in der Versorgung."),
+        "about-3-1":"Unsere Vision",
+        "about-3-2":("PsySys versteht sich als Brücke zwischen Forschung und Praxis: Ein innovatives Werkzeug, "
+                     "das sowohl Kliniker:innen als auch Klient:innen eine neue Perspektive auf psychische "
+                     "Herausforderungen eröffnet und Forschenden eine Plattform zur weiteren Exploration bietet. "
+                     "Indem es traditionelle diagnostische Ansätze hinter sich lässt, fördert PsySys ein "
+                     "individuelles und dynamisches Verständnis von psychischer Gesundheit."),
+        "get-started": "Starte",
+        "back-home": "Zurück",
+        "welcome-landing": "Wilkommen zu PsySys",
+        "sub-landing": "Nutzung des Netzwerkansatzes, um Patient:innen zu stärken.",
+        "view-demo": "Siehe Demo",
+        "learn-more": "Mehr Info",
+        "demo": "Erhalte praktische Erkenntnisse über Deine psychische Gesundheit.",
+        "psychoeducation": "Psychoedukation",
+        "psychoeducation-sub": "Entdecke Deine mentalen Dynamiken.",
+        "editor": "Map Editor",
+        "editor-sub": "Erstelle Deine Mental-Health-Map.",
+        "tracker": "Map Tracker",
+        "tracker-sub": "Tracke Deine Mental-Health-Maps.",
+        "exercise-0": ("Schaue das Video an. Klicke auf 'Start', um die Sitzung zu beginnen, die Dich durch diese Blöcke führt:"),
+        "exercise-1": ("Schaue das Video. Wähle anschließend die Faktoren aus der Liste aus, die Dich betreffen, und gib deren Schwere an."),
+        "exercise-2": ("Schaue das Video. Wähle anschließend zwei kausale Ketten, die Du bei Dir erkennst. Füge so viele Faktoren hinzu, wie Du möchtest."),
+        "example-2-1": ("z.B. Wenn Du Schlafprobleme hast, die Deine Konzentration beeinträchtigen, wähle " 
+                        "'Schlafprobleme' und 'Konzentrationsstörungen' aus."),
+        "example-2-2": ("z.B. Wenn Deine Angst vor der Zukunft Dein Gefühl der Hoffnungslosigkeit verstärkt, was wiederum " 
+                        "Deine Angst verschlimmert, wähle 'Zukunftsangst', 'Hoffnungslosigkeit' und 'Angst' aus."),
+        "exercise-3": ("Schaue das Video. Wähle anschließend zwei Teufelskreise aus, die Du bei Dir selbst erkennst. Füge so viele Faktoren hinzu, wie Du möchtest."),
+        "example-3-1": ("z.B. Wenn Du Schlafprobleme hast, die Deine Angst verstärken und dadurch Deinen Schlaf weiter verschlechtern, wähle 'Schlafprobleme', 'Angst'."),
+        "example-3-2": ("z.B. Wenn Deine soziale Isolation zu Selbstvernachlässigung führt, was Dein Schamgefühl verstärkt und Deine Isolation weiter verschlimmert, wähle 'Soziale Isolation', 'Selbstvernachlässigung', 'Scham'."),
+        "exercise-4": ("Schaue das Video. Wähle anschließend den Faktor aus, der Deiner Meinung nach am stärksten in Deiner Mental-Health-Map wirkt."),
+        "psysys-steps": ["Intro", "Persönliche Faktoren", "Kausale Ketten", "Teufelskreise", "Ansatzpunkte", "Ende"],
+        "edit-text": ("Lade deine PsySys-Karte hoch, bearbeite und erweitere sie. Erkunde Visualisierungen, speichere sie als Datei oder Bild oder spende sie unserem Projekt."),
+        "uva-support": ("Zeichnete PsySys im April 2024 mit einem Impact Grant in Höhe von 25.000 € aus."),
+        "dptv-support": ("Zeichnete PsySys 2024 mit dem Master Forschungspreis in Höhe von 1.000 € aus."),
+        "zu-support": ("Unterstützte die Verbesserung der PsySys-Demo durch Benutzerfeedback."),
+        "read-more": "Mehr dazu",
+        "back": "Zurück",
+        "coming-soon": "Demnächst verfügbar"
     }
 }
 
